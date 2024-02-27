@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM</title>
+    
+
+  </head>
+  <body>
+
+    <button class = "js-button">hello</button>
+    <button class = "js-button2">hello2</button>
+    
+    
+    <script>
+      console.log(document.querySelector('button').innerHTML);
+      document.querySelector('button')
+        .innerHTML = 'Changed';
+
+      console.log(document.querySelector('.js-button'));
+      const buttonElem = document.querySelector('.js-button');
+
+      /*
+      document.title = 'changed';
+
+      console.log(document.body);
+      console.log(typeof document.body);
+      
+      //contorls all html inside body
+      console.log(document.body.innerHTML);
+      document.body.innerHTML = '<button>awesome</button>';
+      */
+     
+      
+      
+      /*
+      document.body.innerHTML = 'hello';
+      document.title = 'goodjob';*/
+    </script>
+  </body>
+</htm

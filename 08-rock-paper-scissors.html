@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock Paper Scissors</title>
+    
+
+  </head>
+  <body>
+    <p>Rock Paper Scissors Game</p>
+    <button onclick="
+    compMove = pickCompMove();
+
+    result = whoWins('Rock',compMove);
+    updateScore(whoisWinner('Rock',compMove));
+    console.log(score);
+    
+    alert(`You picked ${'Rock'}. Computer picked ${compMove}. ${result} ${'\n'} `+JSON.stringify(score, null, 0));
+    ">Rock</button>
+    
+    <button onclick="
+      compMove = pickCompMove();
+
+      result = whoWins('Paper',compMove);
+      updateScore(whoisWinner('Paper',compMove));
+      console.log(score);
+      
+      alert(`You picked ${'Paper'}. Computer picked ${compMove}. ${result}`);
+    ">Paper</button>
+
+    <button onclick="
+      compMove = pickCompMove();
+
+      result = whoWins('Scissors',compMove);
+      updateScore(whoisWinner('Scissors',compMove));
+      console.log(score);
+      
+      alert(`You picked ${'Scissors'}. Computer picked ${compMove}. ${result}`);
+    ">Scissors</button>
+
+    <button onclick="
+      score.Rock = 0;
+      score.Scissors = 0;
+      score.Paper = 0;
+      localStorage.removeItem('score');
+
+    ">Reset</button>
+
+    <p> <a href="https://www.w3schools.com/html/html_links.asp">Click here</a> for the real project</p>
+    
+   
+    <script>
+
+      let result = '';
+      let compMove = '';
+
+      let score = JSON.parse(localStorage.getItem('score')) || 
+        {
+          Rock:0,
+          Paper:0,
+          Scissors:0
+        };
+      
+
+      function pickCompMove(){
+        let compMove = '';
+        const randomNumber = Math.random();
+
+        if (randomNumber >= 0 && randomNumber <(1/3)) {
+          compMove = 'Rock';
+        } else if (randomNumber >= (1/3) && randomNumber <(2/3)){
+          compMove = 'Paper';
+        } else if (randomNumber >= 2/3 && randomNumber <1){
+          compMove= 'Scissors';
+        }
+
+        return compMove;
+      }
+
+      function whoWins(userChoice,compChoice){
+        let result ='';
+        if (userChoice === 'Rock'){
+          if (compChoice === 'Rock') {
+            result = 'Tie';
+          } else if (compMove === 'Paper'){
+            result = 'You Lose';
+          } else if (compMove === 'Scissors'){
+            result = 'You Win';
+          }
+        } else if  (userChoice === 'Paper'){
+          if (compChoice === 'Rock') {
+            result = 'You Win';
+          } else if (compChoice === 'Paper'){
+            result = 'You tie';
+          } else if (compChoice === 'Scissors'){
+            result = 'You Lose';
+          }
+        } else if (userChoice === 'Scissors'){
+          if (compChoice === 'Rock') {
+            result = 'You Lose';
+          } else if (compChoice === 'Paper'){
+            result = 'You Win';
+          } else if (compChoice === 'Scissors'){
+            result = 'You Tie';
+          }
+        }
+        
+        return result;
+      }
+
+      function whoisWinner(userChoice,compChoice){
+        let result ='';
+        if (userChoice === 'Rock'){
+          if (compChoice === 'Rock') {
+            result = 'None';
+          } else if (compMove === 'Paper'){
+            result = 'Paper';
+          } else if (compMove === 'Scissors'){
+            result = 'Rock';
+          }
+        } else if  (userChoice === 'Paper'){
+          if (compChoice === 'Rock') {
+            result = 'Paper';
+          } else if (compChoice === 'Paper'){
+            result = 'None';
+          } else if (compChoice === 'Scissors'){
+            result = 'Scissors';
+          }
+        } else if (userChoice === 'Scissors'){
+          if (compChoice === 'Rock') {
+            result = 'Rock';
+          } else if (compChoice === 'Paper'){
+            result = 'Scissors';
+          } else if (compChoice === 'Scissors'){
+            result = 'None';
+          }
+        }
+        
+        return result;
+      }
+
+      function updateScore(result){
+        console.log(result);
+        if (result === 'Rock'){
+          score.Rock++;
+          console.log('yes');
+        } else if (result==='Paper'){
+          score.Paper++;
+          console.log('yes');
+        } else if (result==='Scissors'){
+          score.Scissors++;
+          console.log('yes');
+        }
+
+        localStorage.setItem('score',JSON.stringify(score));
+      }
+
+      
+
+      
+    </script>
+  </body>
+</html>

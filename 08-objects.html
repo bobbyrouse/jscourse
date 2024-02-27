@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>objects</title>
+    
+
+  </head>
+  <body>
+    <script>
+
+      /*
+      const product = {
+        name: 'socks',
+        price: '1090'
+      };
+
+
+
+      console.log(product);
+
+      product.newProperty = true;
+      console.log(product);
+
+      delete product.newProperty;
+      console.log(product);
+
+      console.log(JSON.stringify(product));
+      const jsonStr = JSON.stringify(product);
+
+
+      console.log(JSON.parse(jsonStr));
+
+      */
+
+      console.log('hello'.length);
+      console.log('hello'.toUpperCase());
+
+      const obj1 = {
+        message:'hello'
+      };
+
+      const obj2 = obj1; //copies the reference / pointer to obj1 not all the content
+      //const applies to reference, not content
+
+      obj1.message = 'hola';
+
+      console.log(obj1);
+      console.log(obj2);
+
+      const obj3 = {
+        message:'hola'
+      };
+
+      console.log(obj1 === obj3);//false bc diff references
+
+      const obj4 = {
+        message:'hola',
+        massage:'howdy'
+      };
+
+      const msg = obj4.message;
+      const { message } = obj4; // destructuring
+
+      console.log(message);
+
+      const obj5 = {
+        message,
+        //same as message: message
+
+        /*method: function function1(){
+          console.log('method');
+        }*/
+        //shorthand for above
+        method(){
+          console.log('method')
+        }
+      };
+
+
+
+    </script>
+  </body>
+</html>
+

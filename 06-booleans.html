@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>booleans</title>
+    
+
+  </head>
+  <body>
+    
+   
+    <script>
+      true
+      false
+
+      console.log(5=='5.00');
+      console.log(5 === '5.00');
+
+      console.log(true && false);
+      console.log(true || false);
+
+      console.log(!false);
+
+      if (5){
+        console.log('truthy');
+      }
+      if (0){ // 0 '' Nan unedefined null
+        console.log('falsy');
+      }
+
+      console.log('text'/ 5); //Nan
+
+      const var1 = undefined; // or let var1; is also undefined
+      //mustdefine const as undefined
+
+      const result = true ? 'truthy' : 'falsy';
+      console.log(result);
+
+      //and operator
+      false && console.log('hello');
+
+      const msg = false && 'hello';
+      console.log(msg);
+
+      console.log(true || false);
+    </script>
+  </body>
+</html>
