@@ -34,7 +34,7 @@
 
       for (let i =1; i < 4; i++){
         console.log(i);
-      }*/
+      }
 
       const todoList = [
         'make dinner',
@@ -45,7 +45,39 @@
       for (let index =0; index < todoList.length;index++){
         const value = todoList[index];
         console.log(value);
+      }*/
+
+      const array1= [1,2,3];
+      const array2= array1;
+      //modifies both arrays
+      array2.push(4);
+      console.log(array1);
+      console.log(array2);
+
+      //makes copy of array1 but new reference, so 5 will only add to arr3
+      const arr3= array1.slice();
+      arr3.push(5);
+
+      //destructure shortcut to get index[0] and index[1]
+      const [firstVal, secondVal]= [1,2,3];
+
+
+      for(let i=1; i<=10; i++){
+
+        if(i%3 ===0){
+          continue;
+        }
+        console.log(i);
+        if(i===8){
+          break;
+        }
       }
+
+      //break ends loop
+      //continue
+      
+
+
 
     </script>
   </body>
