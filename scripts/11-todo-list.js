@@ -115,6 +115,7 @@ function renderTodoList(){
     <button onclick="
       todoList.splice(${i},1); 
       renderTodoList();"
+      class = "delete-todo-button"
     >Delete</button>
     `;
     
@@ -142,3 +143,6 @@ function addTodo() {
 
   renderTodoList();
 }
+
+//delete after
+renderTodoList();
