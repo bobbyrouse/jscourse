@@ -3,11 +3,42 @@
   <head>
     <title>Advanced Functions</title>
     
+    <style>
+
+      .js-input{
+        margin-top: 10px;    
+      }
+    </style>
     
   </head>
-
+    <button onclick="
+      addAnim();
+    ">Add to Cart</button>
+    <div class="js-input"></div>
     <script>
+      let isDisplayed = false;
+      function addAnim(){
+        
+        let cartHTML ='';
 
+        if(!isDisplayed){
+          isDisplayed = true;
+        }else{
+          isDisplayed = false;
+        }
+
+        const timeout1 = setTimeout(renderHTML, 2000);
+      };
+
+      function renderHTML(){
+        const html = `<div>Added!</div>`;
+        if(isDisplayed){
+          document.querySelector('.js-input').innerHTML = html;
+        } else {
+          document.querySelector('.js-input').innerHTML = '';
+        }
+        
+      }
       /*
       function greeting(){
         console.log('pog hello');
@@ -48,6 +79,7 @@
       })
 
       */
+     /*
       setTimeout(function(){console.log('timeout')}, 3000);
 
       console.log('next line');
@@ -57,7 +89,19 @@
       }, 2000);
 
 
-      console.log('tester');
+      console.log('tester');*/
+
+      [
+        'make dindin',
+        'wash dishes',
+        'watch youtube'
+      ].forEach(function(value,index){
+        if(value === 'wash dishes'){
+          return;
+        }
+        console.log(index);
+        console.log(value);
+      });
 
 
     </script>

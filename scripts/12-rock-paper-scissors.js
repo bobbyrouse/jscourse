@@ -90,10 +90,19 @@ function pickComputerMove() {
   return computerMove;
 }
 
+let isAutoPlaying= false;
+let intervalID;
 
 function autoPlay(){
-  setInterval(function (){
-    const playerMove= pickComputerMove();
-    playGame(playerMove);
-  }, 1000);
+  if(!isAutoPlaying){
+    intervalID = setInterval(function (){
+      const playerMove= pickComputerMove();
+      playGame(playerMove);
+    }, 1000);
+    isAutoPlaying = true;
+  } else {
+    //how to stop interval
+    clearInterval(intervalID);
+    isAutoPlaying=false;
+  }
 }
