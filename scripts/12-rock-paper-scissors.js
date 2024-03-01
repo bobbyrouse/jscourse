@@ -93,9 +93,11 @@ function pickComputerMove() {
 let isAutoPlaying= false;
 let intervalID;
 
+
+//normal function definition is better than arrow func bc easier to read and enables hoisting
 function autoPlay(){
   if(!isAutoPlaying){
-    intervalID = setInterval(function (){
+    intervalID = setInterval(() => {
       const playerMove= pickComputerMove();
       playGame(playerMove);
     }, 1000);
