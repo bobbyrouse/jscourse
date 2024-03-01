@@ -11,13 +11,28 @@
     </style>-->
     
   </head>
-  <!--
+  <body>
+
+    <button onclick="" class="js-button">Click</button>
+
+
+    <!--
     <button onclick="
       addAnim();
     ">Add to Cart</button>
     <div class="js-input"></div>-->
     
     <script>
+      const buttonElement = document.querySelector('.js-button');
+      const eventListener = () =>{
+        console.log('string click');
+      };
+
+      buttonElement.addEventListener('click',eventListener);
+
+      buttonElement.addEventListener('click', () => {console.log('string click 2');});
+
+      buttonElement.removeEventListener('click', eventListener);
       /*
       let isDisplayed = false;
       function addAnim(){
@@ -93,7 +108,7 @@
 
 
       console.log('tester');*/
-
+      /*
       [
         'make dindin',
         'wash dishes',
@@ -126,6 +141,15 @@
       const oneLine = () => 2+3;
 
       console.log(oneLine());
+
+      const obj2 = {
+        method: () =>{
+
+        },
+        method() {
+
+        }
+      };*/
 
     </script>
   </body>
